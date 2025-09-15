@@ -1,9 +1,13 @@
 import {PALAVRAS_RUINS } from "./palavrasRuins.js";
-
 const botaoMostraPalavras = document.querySelector("#botao-palavrachave"); 
-
 botaoMostraPalavras.addEventListener("click", mostraPalavrasChave); 
+function mostraPalavrasChave() {
+    const texto = document.querySelector("#entrada-de-texto").value;
+    const campoResultado = document.querySelector("#resultado-palavrachave");
+    const palavrasChave = processaTexto(texto);
 
+    campoResultado.textContent = palavrasChave.join(", ");
+}
 function mostraPalavrasChave(){
 let palavras = texto.split(/\P{L}+/u);
 
@@ -22,6 +26,8 @@ let palavras = texto.split(/\P{L}+/u);
     let ordenadas = Object.keys(frequencias).sort(ordenaPalavra);
     return ordenadas.slice(0, 10);
 }
+
+
 } 
 
 
