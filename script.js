@@ -50,3 +50,6 @@ function contaFrequencias(palavras) {
             }
         }
     }
+
+    return frequencias;
+}
