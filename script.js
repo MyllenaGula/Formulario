@@ -9,6 +9,17 @@ function mostraPalavrasChave() {
     campoResultado.textContent = palavrasChave.join(", ");
 }
 
+function processaTexto(texto) {
+    let palavras = texto.split(/\P{L}+/u);
+
+    for (let i in palavras) {
+        palavras[i] = palavras[i].toLowerCase();
+    }
+
+    palavras = tiraPalavrasRuins(palavras);
+
+    const frequencias = contaFrequencias(palavras);
+
 function mostraPalavrasChave(){
 let palavras = texto.split(/\P{L}+/u);
 
@@ -29,16 +40,6 @@ function ordenaPalavra(p1, p2) {
     return ordenadas.slice(0, 10);
 }
 
-function processaTexto(texto) {
-    let palavras = texto.split(/\P{L}+/u);
-
-    for (let i in palavras) {
-        palavras[i] = palavras[i].toLowerCase();
-    }
-
-    palavras = tiraPalavrasRuins(palavras);
-
-    const frequencias = contaFrequencias(palavras);
 
 
 
