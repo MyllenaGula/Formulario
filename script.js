@@ -27,7 +27,7 @@ function ordenaPalavra(p1, p2) {
 
     let ordenadas = Object.keys(frequencias).sort(ordenaPalavra);
     return ordenadas.slice(0, 10);
-  }
+}
 
 
 
